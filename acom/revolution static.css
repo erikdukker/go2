@@ -1,0 +1,29 @@
+.tp-caption a {
+color:#ff7302;
+text-shadow:none;
+-webkit-transition:all 0.2s ease-out;
+-moz-transition:all 0.2s ease-out;
+-o-transition:all 0.2s ease-out;
+-ms-transition:all 0.2s ease-out;
+}
+
+.tp-caption a:hover {
+color:#ffa902;
+}
+
+.tp-but1{
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow: none;
+	margin: 0px;
+	letter-spacing: 0px;
+	padding: 2px 8px 2px 8px;
+	background-color: #ff7700;
+	border-width: 0px;
+	border-color: #ffffff;
+	border-style: none;
+}

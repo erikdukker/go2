@@ -1,0 +1,49 @@
+2014-10-26 14:54:33: -- go local - www: ANALYSIS started by User on 'LAP' (GoodSync 9.4.8.5)
+2014-10-26 14:54:33: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-10-26 14:54:34: links: Bestanden: 1.036 (uitgesloten 2). Mappen: 139 (uitgesloten 2). C: NTFS, Vrij: 7,41 GB, Totaal: 69,3 GB
+2014-10-26 14:55:07: rechts: Bestanden: 1.045 (uitgesloten 0). Mappen: 139 (uitgesloten 1). FTP: ProFTPD 1.3.0 Server (ProFTPD) [46.235.47.119]
+2014-10-26 14:55:07: Veranderingen: 13, Conflicten: 0, Kopieertijd: 0, Kopieerstatus: 0/0, Fouten: 0
+2014-10-26 14:55:07: Left to Right: Copy File: 3 Delete File: 10 
+2014-10-26 14:55:07: -- Analysis Completed. Time 00:00:34, Speed: 34 files/s
+2014-10-26 14:55:07: 
+2014-10-26 14:55:21: == go local - www: SYNC started by User on 'LAP'
+2014-10-26 14:55:21: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-10-26 14:55:22: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26333659.xlsx'
+2014-10-26 14:55:22: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26333818.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26333923.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26334385.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26335184.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26335247.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26335514.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26336328.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26336579.xlsx'
+2014-10-26 14:55:23: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26336610.xlsx'
+2014-10-26 14:55:24: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\in_smgn.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/in_smgn.php'
+2014-10-26 14:55:25: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\pi_cosb.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/pi_cosb.php'
+2014-10-26 14:55:25: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS26509570.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS26509570.xlsx'
+2014-10-26 14:55:26: Opslaan Status Bestand ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_file_state_v4._gs
+2014-10-26 14:55:26: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23566276.xlsx
+2014-10-26 14:55:27: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23644494.xlsx
+2014-10-26 14:55:27: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23566319.xlsx
+2014-10-26 14:55:27: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS22909204.xlsx
+2014-10-26 14:55:27: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23644480.xlsx
+2014-10-26 14:55:28: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645057.xlsx
+2014-10-26 14:55:28: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23679973.xlsx
+2014-10-26 14:55:28: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23566538.xlsx
+2014-10-26 14:55:28: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23646061.xlsx
+2014-10-26 14:55:28: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645040.xlsx
+2014-10-26 14:55:29: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23681052.xlsx
+2014-10-26 14:55:29: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645195.xlsx
+2014-10-26 14:55:29: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23727174.xlsx
+2014-10-26 14:55:29: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645257.xlsx
+2014-10-26 14:55:30: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645243.xlsx
+2014-10-26 14:55:30: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23644214.xlsx
+2014-10-26 14:55:30: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/acom/pi_cosl.php
+2014-10-26 14:55:30: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23566383.xlsx
+2014-10-26 14:55:31: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS22908668.xlsx
+2014-10-26 14:55:31: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23645095.xlsx
+2014-10-26 14:55:31: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23078268.xlsx
+2014-10-26 14:55:31: Deleted Recycled: ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_saved_/zfil/UPTS23644130.xlsx
+2014-10-26 14:55:32: Items gesynchroniseerd OK: 13, fouten: 0
+2014-10-26 14:55:32: == Sync Completed. Time: 00:00:15, Speed: 4,74 kB/s (28,4 kB/s)
+2014-10-26 14:55:32: 
