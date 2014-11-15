@@ -46,8 +46,8 @@ if (isset($somRes)){
 		$sr		= $kens[0];
 		$br		= $kens[1];
 		$vr		= $kens[2];
-		$pas	= toar($somPas[$ken]);
-		$som	= toar($somRes[$iken]);
+		$pas	= $somPas[$ken];
+		$som	= $somRes[$iken];
 		logarr($con,$kens,"de toon loop (kens)");
 		logarr($con,$pas,"de toon loop (pas)");
 		logarr($con,$som,"de toon loop (som)");
@@ -64,13 +64,15 @@ if (isset($somRes)){
 	echo "</td></tr>".PHP_EOL;
 }
 include 'acom/in_smem.php'; 
-echo "<tr><td>Oefen doel: ".PHP_EOL;
+echo "<tr><td><table><tr><td style='width:50px;'>".PHP_EOL;
+echo "<h2 class='lab'>stel in</h2>".PHP_EOL;
+echo "</td><td>oefendoel: ".PHP_EOL;
 echo "<select size='1' id='lv' name='lv' onclick='vvtr(\"smaa\",\"lv\",\"lv\")'>".PHP_EOL;
 echo "<option "; if($lv == 'sn') 	{ echo "selected ";} echo "value='sn'>snel oefenen</option>".PHP_EOL;
 echo "<option "; if($lv == 'vol') 	{ echo "selected ";} echo "value='vol'>voldoende (6)</option>".PHP_EOL;
 echo "<option "; if($lv == 'goe') 	{ echo "selected ";} echo "value='goe'>goed (8)</option>".PHP_EOL;
 echo "<option "; if($lv == 'gom') 	{ echo "selected ";} echo "value='gom'>goed (8) meer oefenen</option>".PHP_EOL;
-echo "</select>Welke scores:".PHP_EOL;	
+echo "</select></td><td>scores:".PHP_EOL;	
 echo "<select size='1' id='rp' name='rp' onclick='vvtr(\"smaa\",\"rp\",\"rp\")'>".PHP_EOL;
 echo "<option "; if($rp == 'sim') 	{ echo "selected ";} echo "value='sim'>gewoon</option>".PHP_EOL;
 echo "<option "; if($rp == 'det') 	{ echo "selected ";} echo "value='det'>extra</option>".PHP_EOL;
@@ -78,6 +80,6 @@ echo "<option "; if($rp == 'ver') 	{ echo "selected ";} echo "value='ver'>scorev
 echo "<option "; if($rp == 'all') 	{ echo "selected ";} echo "value='all'>alles</option>".PHP_EOL;
 echo "<option "; if($rp == 'niet') 	{ echo "selected ";} echo "value='niet'>geen scores</option>".PHP_EOL;
 echo "</select> ".PHP_EOL;	
-echo "</td></tr>".PHP_EOL;
+echo "</td></tr></table></td></tr>".PHP_EOL;
 include 'acom/in_smst.php'; 
 ?>	

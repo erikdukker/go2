@@ -123,7 +123,8 @@ if (isset($trid)) { // alleen als er een tranactie is
 		$rwct++;
 	}	
 	echo "</td><td><h2> <h2></td></tr><tr><td> ".PHP_EOL;
-	echo "<h2>Advertentie (we hopen de kosten terug te verdienen):</h2></td></tr><tr><td><h2> <h2></td></tr><tr><td> ".PHP_EOL;
+	echo "<h2>advertentie   (we hopen de kosten terug te verdienen):</h2></td></tr><tr><td><h2> <h2></td></tr><tr><td> ".PHP_EOL;
+	echo "<table><tr><td class='lab'></td><td>".PHP_EOL;
 	?>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- goex blok onder -->
@@ -135,7 +136,7 @@ if (isset($trid)) { // alleen als er een tranactie is
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 	<?
-	echo "</td></tr></table> ".PHP_EOL;
+	echo "</td></tr></table></td></tr></table> ".PHP_EOL;
 	echo "</div>".PHP_EOL;
 } else {
 	echo "<h1>geen toegang</h1>";

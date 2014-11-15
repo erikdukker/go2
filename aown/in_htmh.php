@@ -5,7 +5,7 @@
 <link href='acom/go.css' rel='stylesheet' type='text/css' media='screen' /> <!-- default style -->
 <script src='astd/jquery-1.10.2.min.js' type='text/javascript'> </script> <!-- jquery -->
 <script src='acom/go.js' type='text/javascript'></script> <!-- jquery -->
-<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Condensed' rel='stylesheet' type='text/css'>
 <link href='../favicon.ico' rel='shortcut icon' type='image/x-icon'>
 <meta name="robots" content="all">
 <meta name="revisit-after" content="3 days">

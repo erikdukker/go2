@@ -60,6 +60,8 @@ function pro (somNo,vr,kn,ok,ea) { //vr vr=vorm/kn=knop/ok=de goede/ea=extra akt
 		}
 		document.getElementById('d|'+somNo.toString()).style.display=''	
 		document.getElementById('d|'+somNo.toString()).style.opacity="0.4"
+		document.getElementById('v|s'+somNo.toString()).style.display='none'
+		document.getElementById('v|v'+somNo.toString()).style.display='inline'
 	}
 	if (ea == 9) {
 		//alert('submit')

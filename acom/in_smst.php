@@ -1,6 +1,24 @@
 <? 
 logmod($con,'in_smst.php toon statistiek');
 echo "<tr><td>".PHP_EOL;
+echo "<tr><td><table><tr><td class='lab'>scores</td><td>".PHP_EOL;
+if ($rp == 'ver' or $rp == 'all'){
+	$eerste		= 'a';
+	if (isset($oktl) and isset($_SESSION['ver'])){
+		echo "<table><tr class=kop><td>laatste 50 scores (blauw = goed, laatste vooraan)</td></tr><tr>".PHP_EOL;	
+		echo "<td><table><tr>".PHP_EOL;	
+		$ver	= $_SESSION['ver'];
+		while( strlen($ver) > 0 ) {			
+			if (substr($ver,0,1) == '1') {
+				echo "<td class=bl1></td>";
+			} else {	
+				echo "<td class=bl2></td>";			}
+			$ver= substr($ver,1);
+		//	val($ver);
+		} 
+		echo "</tr></table></td></tr></table>".PHP_EOL;
+	}
+}
 if ($rp == 'det' or $rp == 'all'){
 	echo "<table>".PHP_EOL;
 	$eerste		= 'a';
@@ -15,7 +33,9 @@ if ($rp == 'det' or $rp == 'all'){
 				$eerste		= 'u';
 			}
 			$tiEl 		= str_getcsv($tit[$ken],'|');
-			echo "<tr><td>".$tiEl[0]."</td><td  style='min-width:150px;'>".$tiEl[1]."</td><td>".$tiEl[2]."</td>".PHP_EOL; 
+			if ($tiEl[3] == 'ov') { $vorm = 'open vraag';} else { $vorm = 'meerkeuze';}
+			
+			echo "<tr><td>".$srom[$tiEl[0]]."</td><td  style='min-width:150px;'>".$tiEl[2]."</td><td>".$vorm."</td>".PHP_EOL; 
 			echo "<td>".$pri[$ken]."</td>".PHP_EOL;
 			if (isset($oktl[$ken]) || isset($noktl[$ken])) {
 				$tot		= $oktl[$ken] + $noktl[$ken];
@@ -38,26 +58,21 @@ if ($rp == 'det' or $rp == 'all'){
 	echo "</table>".PHP_EOL;
 } 
 if ($rp == 'sim' or $rp == 'all'){ //gewoon
-	$eerste		= 'a';
+	$eerste	= 'a';
 	echo "<table>".PHP_EOL;
 	if (isset($oktl)){
-		$sr = '';
-		$rsco			= getrs($con,"SELECT * FROM ts where co = '".$acco."' and tp = 'co' order by tsky","co"); 
-		while ($rwco 	= mysqli_fetch_array($rsco)){
+		foreach ( $srom as $ky => $om) {
 			if ($eerste	== 'a'){
 				echo "<tr class=kop><td>soort</td><td>goed</td><td>van</td></tr>".PHP_EOL;
 				$eerste		= 'u';
 			}
-			if ($sr != $rwco['sr']) {
-				$rwts		= getrw($con,"SELECT * FROM ts where co = 'defl' and tp = 'sr' and sr = '".$rwco['sr']."'","ts");
-				$sr			= $rwco['sr'];
-				$tiEl 		= str_getcsv($rwts['ti'],'|');
-				echo "<tr><td>".$tiEl[0]."</td>".PHP_EOL;
-				if (isset($oktl[$rwco['sr']])) {	
-					$tot		= $oktl[$sr] + $noktl[$sr];
-					$sco		= round(($oktl[$sr] * 60 )/ $tot);
+			if ( $ky != 'xx') {	
+				echo "<tr><td>".$om	."</td>".PHP_EOL;
+				if (isset($oktl[$ky]) and $ky != 'xx') {	
+					$tot		= $oktl[$ky] + $noktl[$ky];
+					$sco		= round(($oktl[$ky] * 60 )/ $tot);
 					$rest		= 60 - $sco;
-					echo "<td>".$oktl[$sr]."</td><td>".$tot."</td><td><table><tr>
+					echo "<td>".$oktl[$ky]."</td><td>".$tot."</td><td><table><tr>
 							<td style='width:".$sco."px; height:10px; background:blue;padding:0px;'></td>
 							<td style='width:".$rest."px; height:10px; background:lightgray;padding:0px;'></td></tr></table></td></tr>".PHP_EOL;
 				} else {
@@ -68,23 +83,7 @@ if ($rp == 'sim' or $rp == 'all'){ //gewoon
 	}
 	echo "</table>".PHP_EOL;
 }
-if ($rp == 'ver' or $rp == 'all'){
-	$eerste		= 'a';
-	if (isset($oktl) and isset($_SESSION['ver'])){
-		echo "<table><tr class=kop><td>laatste 50 scores (blauw = goed, laatste vooraan)</td></tr><tr>".PHP_EOL;	
-		echo "<td><table><tr>".PHP_EOL;	
-		$ver	= $_SESSION['ver'];
-		while( strlen($ver) > 0 ) {			
-			if (substr($ver,0,1) == '1') {
-				echo "<td class=bl1></td>";
-			} else {	
-				echo "<td class=bl2></td>";			}
-			$ver= substr($ver,1);
-		//	val($ver);
-		} 
-		echo "</tr></table></td></tr></table>".PHP_EOL;
-	}
-}
 
-echo "</td></tr>".PHP_EOL;
+echo "</td></tr></table></td></tr>".PHP_EOL;
+
 ?>

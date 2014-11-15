@@ -13,19 +13,21 @@ foreach ($_POST as $vld => $val) {
 		$vr		= $kens[2];
 		$pastx	= str_getcsv($_POST['p|'.substr($vld,2)],';');
 		$somtx	= str_getcsv($_POST['s|'.substr($vld,2)],';');
-		foreach ($pastx as $par1 ) { $par2 = str_getcsv($par1,'=');if (isset($par2[1])){$par[$par2[0]] = $par2[1];}}
+		foreach ($pastx as $par1 ) { $par2 = str_getcsv($par1,'=');if (isset($par2[1])){$pas[$par2[0]] = $par2[1];}}
 		foreach ($somtx as $som1 ) { $som2 = str_getcsv($som1,'=');if (isset($som2[1])){$som[$som2[0]] = $som2[1];}}
 		$ok		= $som['ok'];
 		//val('ok '.$ok);
 		if ($ok == 'a') { $oktl = 1;$noktl = 0;} else { $oktl = 0;$noktl = 1;} 
 		$_SESSION['ver'] = substr($oktl.$_SESSION['ver'],0,50);	
-		$sel = array("af", "op", "vm", "dl", "ma", "br");
+		$sel = array("mi", "pl", "ke", "de", "ma", "br");
 		if (in_array($sr,$sel)){
 			$uq	= str_replace(' ', '', $som['tn']);
+		} else {
+			$uq	= ''; // of zou dit $som['tn'] moeten zijn
 		}
 		// detail
 		exsql($con,"insert dt SET ken = '".$ken."', uq = '".$uq."', ssid = '".$gossid."', ok = '".$ok."', 
-					som = '".totx($som)."', par = '".totx($par)."'","detail");
+					som = '".totx($som)."', pas = '".totx($pas)."'","detail");
 		// totaal					
 		if ($rwtt	= getrw($con,"SELECT * FROM tt where sr = '".$sr."' and br = '".$br."' and vr ='".$vr."' and ssid = '".$gossid."'","ts" )){
 			$oktl	= $oktl 	+ $rwtt['oktl'];
@@ -38,7 +40,8 @@ foreach ($_POST as $vld => $val) {
 		// vorige 
 		if (substr($vld,2) == $_POST['ansom']){
 			$_SESSION['voKen']	= $ken;
-			$_SESSION['voPas']	= totx($par);
+			$_SESSION['voPas']	= totx($pas);
+			val($_SESSION['voPas'].' '.totx($pas));			
 			$_SESSION['voSom']	= totx($som);
 		}
 	}
