@@ -1,7 +1,7 @@
 <? 
 logmod($con,'in_smst.php toon statistiek');
 echo "<tr><td>".PHP_EOL;
-echo "<tr><td><table><tr><td class='lab'>scores</td><td>".PHP_EOL;
+echo "<tr><td><table><tr><td class='lab'>scores</td><td>".$rwco['ti']."</td></tr><tr><td></td><td>".PHP_EOL;
 if ($rp == 'ver' or $rp == 'all'){
 	$eerste		= 'a';
 	if (isset($oktl) and isset($_SESSION['ver'])){
@@ -29,20 +29,24 @@ if ($rp == 'det' or $rp == 'all'){
 		if (isset($tit[$ken])) {
 			if ($eerste	== 'a'){
 				echo "<tr class=kop><td>soort</td><td>oefening</td><td>vorm</td>".PHP_EOL; 
-				echo "<td>eerst</td><td>goed</td><td>van</td><td>laatste 20</td></tr>".PHP_EOL;
+				echo "<td>eerst</td><td>goed</td><td>van</td><td>laatste 10</td></tr>".PHP_EOL;
 				$eerste		= 'u';
 			}
 			$tiEl 		= str_getcsv($tit[$ken],'|');
 			if ($tiEl[3] == 'ov') { $vorm = 'open vraag';} else { $vorm = 'meerkeuze';}
 			
 			echo "<tr><td>".$srom[$tiEl[0]]."</td><td  style='min-width:150px;'>".$tiEl[2]."</td><td>".$vorm."</td>".PHP_EOL; 
-			echo "<td>".$pri[$ken]."</td>".PHP_EOL;
+			if ($pri[$ken] != 1) {
+				echo "<td>".$pri[$ken]."</td>".PHP_EOL;
+			} else {
+				echo "<td></td>".PHP_EOL;
+			}			
 			if (isset($oktl[$ken]) || isset($noktl[$ken])) {
 				$tot		= $oktl[$ken] + $noktl[$ken];
-				$sp			= $spsc[$ken] * 3;
-				$rest		= 60 - $sp;
+				$sp			= substr_count(substr($rwtt['sp'],0,10),'a') * 3;
+				$rest		= 30 - $sp;
 				echo "<td>".$oktl[$ken]."</td><td>".$tot."</td>".PHP_EOL;
-				//val($spsc[$ken]);
+				//val($pcOk[$ken]);
 				if ($pri[$ken] != 1) {
 					echo "<td><table><tr><td style='width:".$sp."px; height:10px; background:blue;padding:0px;'></td>
 						<td style='width:".$rest."px; height:10px; background:lightgray;padding:0px; '></td></tr></table></td><tr>".PHP_EOL;
@@ -83,7 +87,5 @@ if ($rp == 'sim' or $rp == 'all'){ //gewoon
 	}
 	echo "</table>".PHP_EOL;
 }
-
 echo "</td></tr></table></td></tr>".PHP_EOL;
-
 ?>

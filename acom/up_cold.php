@@ -76,62 +76,72 @@ for ($y = 2; $nalaatste	==  'nog niet'; $y++) {
 			break;			
 			case 'co': 	
 				exsql($con,"insert ts set id = '".$tsval['id']."', tp = 'co', 
-					ti = '".$tsval['ti']."', tspa = '".totx('')."', tx = '".totx('')."'","tp");
+					ti = '".$tsval['ti']."', tspa = '".totx('')."'","tp");
 			break;			
-			case 'br': 	
-				$sets	= str_getcsv($tsval['tspa'],'<'); //splits de verschillende vormen				
-				unset  	($sets[0]);
-				foreach ( $sets as $set) {
-					$set	= trim($set,">"); // strip >
-					$tpas	= str_getcsv($set,';');
-					foreach ( $tpas as $tpar) { //parameters in $pas aggregeren
-						$pas[substr(trim($tpar," "),0,strpos($tpar,"="))] = substr(trim($tpar," "),strpos($tpar,"=")+ 1);
-						//logarr($con,$pas,"pas na ".$tpar);
+			case 'br': 
+				if ($tsval['tspa'] != '') {
+					$sets	= str_getcsv($tsval['tspa'],'<'); //splits de verschillende vormen				
+					unset  	($sets[0]);
+					foreach ( $sets as $set) {
+						$set	= trim($set,">"); // strip >
+						$tpas	= str_getcsv($set,';');
+						foreach ( $tpas as $tpar) { //parameters in $pas aggregeren
+							$pas[substr(trim($tpar," "),0,strpos($tpar,"="))] = substr(trim($tpar," "),strpos($tpar,"=")+ 1);
+							//logarr($con,$pas,"pas na ".$tpar);
+						}
+						if (isset($pas['rk'])) {
+							$pas['om']		= $tsval['ti'];
+							$pasrk 			= $pas;
+							$pasrk['br'] 	= $tsval['id'];						
+						} else {
+							if (isset($pas['rl'])) {$cos[$pas['rl']] = $pas;}
+						}
+						unset($pas);
 					}
-					if (isset($pas['rk'])) {
-						$pas['om']		= $tsval['ti'];
-						$pasrk 			= $pas;
-						$pasrk['br'] 	= $tsval['id'];						
-					} else {
-						if (isset($pas['rl'])) {$cos[$pas['rl']] = $pas;}
-					}
-					unset($pas);
-				}
-				foreach ( $cos as $rl => $pars) {
-					$rlel		= str_getcsv($rl,'|'); //splits co van vrm	
-					$pas['vr'] 	= $rlel[1];
-				//	logarr($con,$pas,"pas na init");
-					$rwco		= getrw($con,"SELECT * FROM ts where id = '".$rlel[0]."' and tp = 'co'","co"); 	
-					$tspa		= toar($rwco['tspa']);
-					$tx			= toar($rwco['tx']);
-					foreach ( $pasrk as $par => $wrd) { // de rekenregels rk
-						$pas[$par] 	= $wrd;
-					}
-				//	logarr($con,$pas,"pas na rk");
-					foreach ( $pars as $par => $wrd) { // de co parameters
-						$pas[$par] 	= $wrd;
-					}
-				//	logarr($con,$pas,"pa na co ");
-				//	logarr($con,$vrs,"vrs ");
-					foreach ( $vrs as $par => $wrd) { // de vorm (vr) parameters aanvullen
-						$pael			= str_getcsv($par,'|'); //splits par
-						if ($pael[0] 	== $rlel[1]) {
-							if (!isset($pas[$pael[1]])){
-								$pas[$pael[1]] 	= $wrd;
+					foreach ( $cos as $rl => $pars) {
+						$rlel			= str_getcsv($rl,'|'); //splits co van vrm	
+						$pas['vr'] 		= $rlel[1];
+					//	logarr($con,$pas,"pas na init");
+						if ($rwco		= getrw($con,"SELECT * FROM ts where id = '".$rlel[0]."' and tp = 'co'","co")) { 	
+							$tspa		= toar($rwco['tspa']);
+							foreach ( $pasrk as $par => $wrd) { // de rekenregels rk
+								$pas[$par] 	= $wrd;
 							}
+						//	logarr($con,$pas,"pas na rk");
+							foreach ( $pars as $par => $wrd) { // de co parameters
+								$pas[$par] 	= $wrd;
+							}
+						//	logarr($con,$pas,"pa na co ");
+						//	logarr($con,$vrs,"vrs ");
+							foreach ( $vrs as $par => $wrd) { // de vorm (vr) parameters aanvullen
+								$pael			= str_getcsv($par,'|'); //splits par
+								if ($pael[0] 	== $rlel[1]) {
+									if (!isset($pas[$pael[1]])){
+										$pas[$pael[1]] 	= $wrd;
+									}
+								}
+							}
+							if (isset($pas['wd']) and isset($pas['wc'])) { // is er een correctie ?
+								$pas['wd'] = $pas['wd'] + $pas['wc'];
+								unset($pas['wc']);
+							}		
+							logarr($con,$pas,"pas na vr ");
+							$ky				= $pas['br'].'|'.$pas['vr'];
+							$tspa[$ky] 		= $pas;	
+							$ky				= $rlel[0].' : '.$pas['br'].'|'.$pas['vr'];
+							$pas['ts']		= $ky;
+							$tspabr[$ky] 	= $pas;					
+							exsql($con,"update ts set tspa = '".totx($tspa)."' where tsky = '".$rwco['tsky']."'","update co");
+							unset($pas);
+						} else {
+							echo "bij bereik ".$tsval['id']." configuratie ".$rlel[0]."niet gevonden<br>";
 						}
 					}
-					if (isset($pas['wd']) and isset($pas['wc'])) { // is er een correctie ?
-						$pas['wd'] = $pas['wd'] + $pas['wc'];
-						unset($pas['wc']);
-					}		
-					logarr($con,$pas,"pas na vr ");
-					$ky			= $pas['br'].'|'.$pas['vr'];
-					$tspa[$ky] 	= $pas;					
-					exsql($con,"update ts set tspa = '".totx($tspa)."' where tsky = '".$rwco['tsky']."'","update co");
-					unset($pas);
+					exsql($con,"insert ts set id = 'br(".$tsval['id'].")', tp = 'co',  
+						ti = '".$tsval['ti']."', tspa = '".totx($tspabr)."'","tp");		// configuratie voor bereik
+		
+					unset($sets,$cos,$tspabr);
 				}
-				unset($sets,$cos);
 			break;		
 		}
 } else {

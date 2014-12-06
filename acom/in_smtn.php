@@ -18,9 +18,9 @@ if ($somNo == 0 or $somNo == 1) {
 } else {
 	echo "<div id=d|".$somNo." style='display:none'>".PHP_EOL;
 }
-echo "<table><tr><td class='sm md'>".PHP_EOL;
-echo "<h1 id='v|s".$somNo."' class='lab' style='font-size:20px;'>SOM</h1>".PHP_EOL;
-echo "<h1 id='v|v".$somNo."' class='lab' style='font-size:15px;display:none'>vorige</h1>".PHP_EOL;
+echo "<table><tr><td class='sm md lab'>".PHP_EOL;
+echo "<h1 id='v|s".$somNo."' style='font-size:20px;'>SOM</h1>".PHP_EOL;
+echo "<h1 id='v|v".$somNo."' style='font-size:15px;display:none'>vorige</h1>".PHP_EOL;
 echo "</td><td class='sm md'>".PHP_EOL;
 echo "<table class=sm >".PHP_EOL;
 echo "<tr><th class='sm md' style='min-width:100px'>".$som['tn']."</th><th class='sm'>=</th>".PHP_EOL;
@@ -31,7 +31,7 @@ if ($vr == 'mk') {
 	for ( $i= 1; isset($som['a'.$i]) and $i <= $pas['aa']; $i++) {
 		if (isset($pas['kb'])) {$kb = "style='width: ".$pas['kb']."px'"; } else { $kb = "";} // afwijkende breedte
 		if ($som['a'.$i] == $som['rs']) {$ok = $i;} 
-		echo "<div class='kn' ".$kb." name=k".$somNo.'|'.$i." id=k|".$somNo.'|'.$i." onclick='pro(".$somNo.",1,".$i.",".$ok.",".$exAc.")'>";
+		echo "<div class='kn' ".$kb." name=k".$somNo.'|'.$i." id=k|".$somNo.'|'.$i." onclick='pro(".$somNo.",1,".$i.",".$exAc.")'>";
 		echo $som['a'.$i]."</div>";
 		if ($pas['ag']	== $ag) {		
 			echo "<br>";	
@@ -45,7 +45,7 @@ if ($vr == 'mk') {
 	echo "<td style='min-width:300px'>";			
 	if ($exAc	== 1 and isset($som['sc'])) {$sc = $som['sc'];} else { $sc = '';} //sc is het in gegeven antwoord
 	if ($somNo	== 1) {$setFoc = 'a'; } 
-	echo "<input type='text' class='md' id=t|".$somNo." size=7 value='".$sc."' onchange='pro(".$somNo.",2,99,".$som['rs'].",".$exAc.")'>".PHP_EOL;
+	echo "<input type='text' class='md' id=t|".$somNo." size=7 value='".$sc."' onchange='pro(".$somNo.",2,99,".$exAc.")'>".PHP_EOL;
 	echo "<input class='nd md'	disabled type='text' id=o|".$somNo." size=7 value='".$som['rs']."' style='background:#41fa10' )'></td>".PHP_EOL;
 	echo "</td>";			
 }
@@ -62,9 +62,9 @@ if ($exAc == 1) {
 		for ( $i= 1; $i <= $pas['aa']; $i++) {
 			if ($som['a'.$i] == $som['rs']){$ok = $i;} // bepaal ok
 		}
-		echo "<script>pro(0,1,".$som['sc'].",".$ok.",".$exAc.")</script>";
+		echo "<script>pro(0,1,".$som['sc'].",".$exAc.")</script>";
 	} else {
-		echo "<script>pro(0,2,99,".$som['rs'].",".$exAc.")</script>";
+		echo "<script>pro(0,2,99,".$exAc.")</script>";
 	}
 	$exAc = 0;
 }

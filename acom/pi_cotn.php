@@ -1,10 +1,10 @@
 <?
 logmod($con,'pi_cots.php test configuratie');
 $acco	= getpar('acco');
-echo "<form accept-charset='UTF-8' action='index.php?t=cosh' id='accoform' method='post'>"; 
+echo "<form accept-charset='UTF-8' action='index.php?t=cotn' id='accoform' method='post'>"; 
 echo "<table>".PHP_EOL;
 echo "<tr><th>Andere configuratie testen? </th></tr> ".PHP_EOL;
-echo "<tr><td><select size='1' id='acco' name='acco'  onclick='vvtr(\"cots\",\"acco\",\"acco\")'>".PHP_EOL;
+echo "<tr><td><select size='1' id='acco' name='acco'  onclick='vvtr(\"cotn\",\"acco\",\"acco\")'>".PHP_EOL;
 $rsts	= getrs($con,"select distinct id from ts where tp = 'co'","ts"); 
 while ($rwts = mysqli_fetch_array($rsts)) {
 	echo "<option ";

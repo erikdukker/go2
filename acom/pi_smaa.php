@@ -64,14 +64,14 @@ if (isset($somRes)){
 	echo "</td></tr>".PHP_EOL;
 }
 include 'acom/in_smem.php'; 
-echo "<tr><td><table><tr><td style='width:50px;'>".PHP_EOL;
-echo "<h2 class='lab'>stel in</h2>".PHP_EOL;
-echo "</td><td>oefendoel: ".PHP_EOL;
+echo "<tr><td><table><tr><td  class='lab'>".PHP_EOL;
+echo "<h2>stel in</h2>".PHP_EOL;
+echo "</td><td>doel: ".PHP_EOL;
 echo "<select size='1' id='lv' name='lv' onclick='vvtr(\"smaa\",\"lv\",\"lv\")'>".PHP_EOL;
 echo "<option "; if($lv == 'sn') 	{ echo "selected ";} echo "value='sn'>snel oefenen</option>".PHP_EOL;
 echo "<option "; if($lv == 'vol') 	{ echo "selected ";} echo "value='vol'>voldoende (6)</option>".PHP_EOL;
 echo "<option "; if($lv == 'goe') 	{ echo "selected ";} echo "value='goe'>goed (8)</option>".PHP_EOL;
-echo "<option "; if($lv == 'gom') 	{ echo "selected ";} echo "value='gom'>goed (8) meer oefenen</option>".PHP_EOL;
+echo "<option "; if($lv == 'gom') 	{ echo "selected ";} echo "value='gom'>top (9)</option>".PHP_EOL;
 echo "</select></td><td>scores:".PHP_EOL;	
 echo "<select size='1' id='rp' name='rp' onclick='vvtr(\"smaa\",\"rp\",\"rp\")'>".PHP_EOL;
 echo "<option "; if($rp == 'sim') 	{ echo "selected ";} echo "value='sim'>gewoon</option>".PHP_EOL;
