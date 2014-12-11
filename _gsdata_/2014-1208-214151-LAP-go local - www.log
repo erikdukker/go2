@@ -1,0 +1,47 @@
+2014-12-08 21:41:51: -- go local - www: ANALYSIS started by User on 'LAP' (GoodSync 9.4.8.5)
+2014-12-08 21:41:51: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-08 21:41:53: links: Bestanden: 1.021 (uitgesloten 2). Mappen: 139 (uitgesloten 2). C: NTFS, Vrij: 12,5 GB, Totaal: 69,3 GB
+2014-12-08 21:42:30: rechts: Bestanden: 1.036 (uitgesloten 0). Mappen: 139 (uitgesloten 1). FTP: ProFTPD 1.3.0 Server (ProFTPD) [46.235.47.119]
+2014-12-08 21:42:30: Veranderingen: 32, Conflicten: 0, Kopieertijd: 0, Kopieerstatus: 0/2, Fouten: 0
+2014-12-08 21:42:30: Left to Right: Copy File: 10 Delete File: 21 
+2014-12-08 21:42:30: Right to Left: Copy File: 1 
+2014-12-08 21:42:30: -- Analysis Completed. Time 00:00:39, Speed: 30 files/s
+2014-12-08 21:42:30: 
+2014-12-08 21:42:42: == go local - www: SYNC started by User on 'LAP'
+2014-12-08 21:42:42: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29811311.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29812450.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29812486.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29814164.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29826956.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29827234.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29827539.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29873666.xlsx'
+2014-12-08 21:42:46: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29907447.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29907536.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29908144.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29909933.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29910165.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29910249.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29910501.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29910641.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29910810.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29912907.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29982622.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29982628.xlsx'
+2014-12-08 21:42:47: Verwijder Bestand 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29982631.xlsx'
+2014-12-08 21:42:48: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\in_smgn.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/in_smgn.php'
+2014-12-08 21:42:49: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\in_smst.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/in_smst.php'
+2014-12-08 21:42:49: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\index.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/index.php'
+2014-12-08 21:42:50: Kopieer Nieuw 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS29983174.xlsx' -> 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS29983174.xlsx'
+2014-12-08 21:42:51: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30161497.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30161497.xlsx'
+2014-12-08 21:42:52: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30164108.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30164108.xlsx'
+2014-12-08 21:42:52: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30164991.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30164991.xlsx'
+2014-12-08 21:42:53: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30165253.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30165253.xlsx'
+2014-12-08 21:42:54: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30165361.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30165361.xlsx'
+2014-12-08 21:42:55: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30166072.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30166072.xlsx'
+2014-12-08 21:42:55: Kopieer Nieuw 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30166502.xlsx' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30166502.xlsx'
+2014-12-08 21:42:56: Opslaan Status Bestand ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_file_state_v4._gs
+2014-12-08 21:42:56: Items gesynchroniseerd OK: 34, fouten: 0
+2014-12-08 21:42:57: == Sync Completed. Time: 00:00:16, Speed: 14,7 kB/s (28,8 kB/s)
+2014-12-08 21:42:57: 

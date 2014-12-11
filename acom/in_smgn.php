@@ -153,6 +153,13 @@ if ($tlpri 	!= 0 ) {
 				case 'mi|1': 
 					$som['rs']	= $som['t1'] - $som['t2']; $som['tn']	= $som['t1']." - ".$som['t2']; // aftrekken
 				break;
+				case 'mi|2': 
+					if ($som['t1'] > $som['t2']) {
+						$som['rs']	= $som['t1'] - $som['t2']; $som['tn']	= $som['t1']." - ".$som['t2']; // aftrekken positief
+					} else {
+						$som['rs']	= $som['t2'] - $som['t1']; $som['tn']	= $som['t2']." - ".$som['t1']; 
+					}
+				break;
 				case 'pl|1':
 					$som['rs']	= $som['t1'] + $som['t2']; $som['tn']	= $som['t1']." + ".$som['t2']; // optellen
 					if (isset($som['t3'])) {
@@ -173,23 +180,11 @@ if ($tlpri 	!= 0 ) {
 				case 'ke|1': //  vermenigvuldigen
 					$som['rs']	= $som['t1'] * $som['t2']; $som['tn']	= $som['t1']." x ".$som['t2']; 
 				break;
-				case 'ke|2': //	vermeninigvuldigen met decimalen			
-					$r1			= $som['t1'] / pow(10,$som['t2']);
-					$r2			= pow(10,$som['t3']);
-					$som['tn']	= $r1." * ".$r2;
-					$som['rs']			= $r1 * $r2;
-				break;
 				case 'de|1': 
 					$r1			= $som['t1'] * $som['t2'];
 					$som['tn']	= $r1." / ".$som['t2'];
 					$som['rs']	= $som['t1']; 
-				break;			
-				case 'de|2': 				
-					$r1			= $som['t1'] / pow(10,$som['t2']);
-					$r2			= pow(10,$som['t3']);
-					$som['tn']	= $r1." / ".$r2;
-					$som['rs']			= $r1 / $r2;
-				break;
+				break;	
 				case 'br|1': //   a/b = ?/c
 					$rest			= $som['t2'] % $som['t1'];
 					if ($rest != 0) {
@@ -220,7 +215,7 @@ if ($tlpri 	!= 0 ) {
 							$r1			= $som['t1'] * ($som['t3']+1);
 							$r2			= $som['t2'] * ($som['t3']+1);							
 							$ants[6]	= $r1."/".$som['t2'];		
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}								
 						}
@@ -253,7 +248,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= $som['t4']*3;						
 							$ants[5]	= $som['t3'];
 							$ants[6]	= $som['t4']*2;	
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -264,8 +259,8 @@ if ($tlpri 	!= 0 ) {
 				case 'br|3': //   0,4 = ? / ?
 					$rest			= $som['t1'] % $som['t2'];
 					if ($rest != 0) {
-						$r1			= round($som['t1']/$som['t2'],3);
-						$som['tn']	= $r1;
+						$r1			= round($som['t1']/$som['t2'],4);
+						$som['tn']	= $r1.' is gelijk aan de breuk ';
 						for ($j = 7; $j >= 2; $j = $j -1){
 							$rest1		= $som['t1'] % $j;
 							$rest2		= $som['t2'] % $j;
@@ -285,7 +280,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= ($som['t1']-1)."/".($som['t2']-1);			
 							$ants[5]	= ($som['t1']+2)."/".($som['t2']);					
 							$ants[6]	= ($som['t1']+3)."/".($som['t2']+1);
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -301,8 +296,19 @@ if ($tlpri 	!= 0 ) {
 						}
 						$r2			= $som['t1'] - $r1;
 						$r3			= $r2 / $som['t2']; // hele
-						$som['tn']	= $som['t1'].'/'.$som['t2'];
-						$som['rs']			= $r3.' '.$r1.'/'.$som['t2'];
+						$som['tn']	= 'maak gemengde breuk '.$som['t1'].'/'.$som['t2'];
+						$r4			= $r1;
+						$r5			= $som['t2'];
+						for ($j = 7; $j >= 2; $j = $j -1){
+							$rest1		= $r4 % $j;
+							$rest2		= $r5 % $j;
+							if ($rest1 == 0 and $rest2 == 0) {
+								//val('j '.$j);
+								$r4		= $r4 / $j;
+								$r5		= $r5 / $j;
+							}						
+						}
+						$som['rs']			= $r3.' '.$r4.'/'.$r5;
 						//val($som['rs']);
 						if ($vr == 'mk'){	
 							$ants[0]	= $som['rs'];
@@ -312,7 +318,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= ($r3+1).' '.$r1.'/'.$som['t2'];
 							$ants[5]	= $r3.' '.($r1+1).'/'.$som['t2'];				
 							$ants[6]	= ($r3+1).' '.($r1+1).'/'.$som['t2'];			
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -323,7 +329,7 @@ if ($tlpri 	!= 0 ) {
 				case 'br|5': //   c a / b =  d / b
 					if ($som['t1'] != $som['t2']) {
 						$r1			= $som['t3'] * $som['t2'] + $som['t1'];							
-						$som['tn']	= $som['t3'].' '.$som['t1'].'/'.$som['t2'];
+						$som['tn']	= 'maak enkelvoudige breuk van '.$som['t3'].' '.$som['t1'].'/'.$som['t2'];
 						$som['rs']			= $r1.'/'.$som['t2'];
 						//val($som['rs']);
 						if ($vr == 'mk'){	
@@ -334,7 +340,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= ($r1+1).'/'.$som['t2'];
 							$ants[5]	= ($som['t1']+1).'/'.$som['t2'];				
 							$ants[6]	= ($som['t1']+5).'/'.$som['t2'];	
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -370,7 +376,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= ($r1+2).'/'.($r3+1).' en '.($r2+1).'/'.($r3+1);
 							$ants[5]	= ($r1+2).'/'.$r3.' en '.$r2.'/'.$r3;
 							$ants[6]	= $r1.'/'.($r3+1).' en '.($r2+1).'/'.($r3+1);
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -380,20 +386,24 @@ if ($tlpri 	!= 0 ) {
 					}
 				break;
 				case 'br|7': //   a / c of b /d
-					if ($som['t1'] != $som['t3'] and $som['t2'] != $som['t4']) {
+					if ($som['t1'] != $som['t3'] and $som['t2'] != $som['t4'] and $som['t1'] != $som['t2']) {
 						$r1			= $som['t1'] / $som['t3'];						
 						$r2			= $som['t2'] / $som['t4'];	
-						$som['tn']	= 'wat is de grootste '.$som['t1'].'/'.$som['t3'].' of '.$som['t2'].'/'.$som['t4'];
+						$som['tn']	= 'welke is de grootste ';
 						$pas['aa']	= 2;
-						if ($r1 > $som['t2']) {
-							$som['rs']			= $som['t1'].'/'.$som['t3'];
-							$ants[0]	= $som['rs'];
-							$ants[1]	= $som['t2'].'/'.$som['t4'];
+						if ($r1 != $r2) {
+							if ($r1 > $r2) {
+								$som['rs']			= $som['t1'].'/'.$som['t3'];
+								$ants[0]	= $som['rs'];
+								$ants[1]	= $som['t2'].'/'.$som['t4'];
+							} else {
+								$som['rs']			= $som['t2'].'/'.$som['t4'];
+								$ants[0]	= $som['rs'];
+								$ants[1]	= $som['t1'].'/'.$som['t3'];
+							}								
 						} else {
-							$som['rs']			= $som['t2'].'/'.$som['t4'];
-							$ants[0]	= $som['rs'];
-							$ants[1]	= $som['t1'].'/'.$som['t3'];
-						}								
+							$ok		= 'u';
+							}
 					} else {
 						$ok		= 'u';
 					}
@@ -428,7 +438,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= $r3.'/'.$som['t4'];
 							$ants[5]	= $r1.'/'.$som['t4'];
 							$ants[6]	= $som['t2'].'/'.$r4;
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -452,7 +462,7 @@ if ($tlpri 	!= 0 ) {
 								$r1		= $r1 / $j;
 								$r2		= $r2 / $j;
 								$r3		= $r3 / $j;
-								$r4		= $r3 / $j;
+								$r4		= $r4 / $j;
 							}						
 						}
 						$som['tn']	= $som['t1'].'/'.$som['t3'].' - '.$som['t2'].'/'.$som['t4'];
@@ -466,7 +476,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= $r3.'/'.$som['t4'];
 							$ants[5]	= $r1.'/'.$som['t4'];
 							$ants[6]	= $som['t2'].'/'.$r4;
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -489,6 +499,7 @@ if ($tlpri 	!= 0 ) {
 						}
 						$som['tn']	= $som['t1'].'/'.$som['t3'].' * '.$som['t2'].'/'.$som['t4'];
 						$som['rs']			= $r1.'/'.$r2;
+						if ($som['rs']		== '1/1') { $som['rs'] = '1'; }
 						//val($som['rs']);
 						if ($vr == 'mk'){	
 							$ants[0]	= $som['rs'];
@@ -498,7 +509,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= ($r1+1).'/'.$som['t2'];
 							$ants[5]	= $r1.'/'.$som['t4'];
 							$ants[6]	= $som['t1'].'/'.$som['t4'];
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -519,8 +530,9 @@ if ($tlpri 	!= 0 ) {
 								$r2		= $r2 / $j;
 							}						
 						}
-						$som['tn']	= $som['t1'].'/'.$som['t3'].' * '.$som['t2'].'/'.$som['t4'];
-						$som['rs']			= $r1.'/'.$som['t2'];
+						$som['tn']	= $som['t1'].'/'.$som['t3'].' / '.$som['t2'].'/'.$som['t4'];
+						$som['rs']			= $r1.'/'.$r2;
+						if ($som['rs']		== '1/1') { $som['rs'] = '1'; }
 						//val($som['rs']);
 						if ($vr == 'mk'){	
 							$ants[0]	= $som['rs'];
@@ -530,7 +542,7 @@ if ($tlpri 	!= 0 ) {
 							$ants[4]	= $r1.'/'.$som['t4'];
 							$ants[5]	= $r1.'/'.($som['t4']+1);
 							$ants[6]	= $som['t2'].'/'.$r2;
-							for($i = 0; $i < count($ants); $i++) {
+							for($i = 1; $i < count($ants); $i++) {
 								if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 							}
 						}
@@ -550,7 +562,7 @@ if ($tlpri 	!= 0 ) {
 						$ants[4]	= round($som['rs'] / 2);					
 						$ants[5]	= $som['rs'] * 2;					
 						$ants[6]	= $som['rs'] + 3;	
-						for($i = 0; $i < count($ants); $i++) {
+						for($i = 1; $i < count($ants); $i++) {
 							if ($ants[$i] == $ants[0]) { unset($ants[$i]); }
 						}
 					}
@@ -640,13 +652,17 @@ if ($tlpri 	!= 0 ) {
 		}
 	//	val('1: '.$nabew);
 		switch ($nabew) { // naar decimale komma
-			case 'ov|ke|2': 
-			case 'ov|de|2': 
+			case 'ov|ke|1': 
+			case 'ov|de|1': 
 			case 'ov|mv|2':  
 			case 'ov|pl|2': 
 			case 'ov|pl|1': 
 			case 'ov|mi|1': 
+			case 'ov|mi|2': 
 				$som['rs']	=	str_replace(".",",",$som['rs']);
+				if (strpos($som['rs'],',') != strlen($som['rs']) -1) { 
+					$som['rs']	=	rtrim($som['rs'],'0');
+				}
 				$som['tn']	=	str_replace(".",",",$som['tn']);
 			break;
 		}

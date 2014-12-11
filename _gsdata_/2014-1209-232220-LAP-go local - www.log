@@ -1,0 +1,17 @@
+2014-12-09 23:22:20: -- go local - www: ANALYSIS started by User on 'LAP' (GoodSync 9.4.8.5)
+2014-12-09 23:22:20: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-09 23:22:20: links: Bestanden: 1.027 (uitgesloten 2). Mappen: 139 (uitgesloten 2). C: NTFS, Vrij: 12,8 GB, Totaal: 69,3 GB
+2014-12-09 23:22:53: rechts: Bestanden: 1.027 (uitgesloten 0). Mappen: 139 (uitgesloten 1). FTP: ProFTPD 1.3.0 Server (ProFTPD) [46.235.47.119]
+2014-12-09 23:22:53: Veranderingen: 3, Conflicten: 0, Kopieertijd: 0, Kopieerstatus: 0/0, Fouten: 0
+2014-12-09 23:22:53: Left to Right: Copy File: 3 
+2014-12-09 23:22:53: -- Analysis Completed. Time 00:00:33, Speed: 35 files/s
+2014-12-09 23:22:53: 
+2014-12-09 23:23:03: == go local - www: SYNC started by User on 'LAP'
+2014-12-09 23:23:03: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-09 23:23:04: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\go.css' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/go.css'
+2014-12-09 23:23:05: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\in_smgn.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/in_smgn.php'
+2014-12-09 23:23:06: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\pi_jege.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/pi_jege.php'
+2014-12-09 23:23:07: Opslaan Status Bestand ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_file_state_v4._gs
+2014-12-09 23:23:07: Items gesynchroniseerd OK: 3, fouten: 0
+2014-12-09 23:23:08: == Sync Completed. Time: 00:00:06, Speed: 7,77 kB/s (1017 bytes/s)
+2014-12-09 23:23:08: 

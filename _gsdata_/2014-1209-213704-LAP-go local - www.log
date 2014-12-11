@@ -1,0 +1,15 @@
+2014-12-09 21:37:05: -- go local - www: ANALYSIS started by User on 'LAP' (GoodSync 9.4.8.5)
+2014-12-09 21:37:05: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-09 21:37:05: links: Bestanden: 1.027 (uitgesloten 2). Mappen: 139 (uitgesloten 2). C: NTFS, Vrij: 12,7 GB, Totaal: 69,3 GB
+2014-12-09 21:37:37: rechts: Bestanden: 1.027 (uitgesloten 0). Mappen: 139 (uitgesloten 1). FTP: ProFTPD 1.3.0 Server (ProFTPD) [46.235.47.119]
+2014-12-09 21:37:37: Veranderingen: 1, Conflicten: 0, Kopieertijd: 0, Kopieerstatus: 0/0, Fouten: 0
+2014-12-09 21:37:37: Left to Right: Copy File: 1 
+2014-12-09 21:37:37: -- Analysis Completed. Time 00:00:33, Speed: 35 files/s
+2014-12-09 21:37:37: 
+2014-12-09 21:41:47: == go local - www: SYNC started by User on 'LAP'
+2014-12-09 21:41:47: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-09 21:41:49: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\index.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/index.php'
+2014-12-09 21:41:50: Opslaan Status Bestand ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_file_state_v4._gs
+2014-12-09 21:41:50: Items gesynchroniseerd OK: 1, fouten: 0
+2014-12-09 21:41:51: == Sync Completed. Time: 00:00:04, Speed: 5,72 kB/s (45,8 kB/s)
+2014-12-09 21:41:51: 

@@ -1,0 +1,18 @@
+2014-12-08 22:20:15: -- go local - www: ANALYSIS started by User on 'LAP' (GoodSync 9.4.8.5)
+2014-12-08 22:20:15: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-08 22:20:15: links: Bestanden: 1.022 (uitgesloten 2). Mappen: 139 (uitgesloten 2). C: NTFS, Vrij: 12,5 GB, Totaal: 69,3 GB
+2014-12-08 22:20:49: rechts: Bestanden: 1.022 (uitgesloten 0). Mappen: 139 (uitgesloten 1). FTP: ProFTPD 1.3.0 Server (ProFTPD) [46.235.47.119]
+2014-12-08 22:20:49: Veranderingen: 3, Conflicten: 0, Kopieertijd: 0, Kopieerstatus: 0/0, Fouten: 0
+2014-12-08 22:20:49: Left to Right: Copy File: 1 
+2014-12-08 22:20:49: Right to Left: Copy File: 1 Delete File: 1 
+2014-12-08 22:20:49: -- Analysis Completed. Time 00:00:35, Speed: 33 files/s
+2014-12-08 22:20:49: 
+2014-12-08 22:20:54: == go local - www: SYNC started by User on 'LAP'
+2014-12-08 22:20:54: C:\xampp\htdocs\gewoonoefenen.nl\go2 <-> ftp://gewoonoefenen.nl/httpdocs/go2
+2014-12-08 22:20:55: Verwijder Bestand 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS29983174.xlsx'
+2014-12-08 22:20:55: Kopieer Over 'C:\xampp\htdocs\gewoonoefenen.nl\go2\acom\in_smgn.php' -> 'ftp://gewoonoefenen.nl/httpdocs/go2/acom/in_smgn.php'
+2014-12-08 22:20:56: Kopieer Nieuw 'ftp://gewoonoefenen.nl/httpdocs/go2/zfil/UPTS30252689.xlsx' -> 'C:\xampp\htdocs\gewoonoefenen.nl\go2\zfil\UPTS30252689.xlsx'
+2014-12-08 22:20:56: Opslaan Status Bestand ftp://gewoonoefenen.nl/httpdocs/go2/_gsdata_/_file_state_v4._gs
+2014-12-08 22:20:57: Items gesynchroniseerd OK: 3, fouten: 0
+2014-12-08 22:20:57: == Sync Completed. Time: 00:00:04, Speed: 20,0 kB/s (188 kB/s)
+2014-12-08 22:20:57: 
